@@ -1,0 +1,11 @@
+cd               goes to user root
+cd ~             goes to user root - useless
+cd ~/Downloads   goes to folder Downloads on user root
+cd /             goes to your system root
+cd foo           goes to folder foo WITHIN the current folder
+
+cd .             stay in the same folder - useless
+cd ..            o up one folder
+cd ../../        go back one folder per double-dot
+
+pwd              show current path
