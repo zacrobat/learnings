@@ -9,3 +9,8 @@ cd ..            o up one folder
 cd ../../        go back one folder per double-dot
 
 pwd              show current path
+ls               list folder contents
+ls -a            list folder contents including hidden
+mkdir [name]     make directory (folder)
+mkdir -p folder/folder/folder   make directory recursive - makes all folders in path
+[tab]            completes words after you type the first letter(s)

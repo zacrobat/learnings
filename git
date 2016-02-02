@@ -1,0 +1,12 @@
+git clone [repoName] .  clone from [] to . ( . is current folder)
+git status              lists files, indicates those that have changed
+git add -A              stages all changed files (adds to the next commit)
+git commit -m "message" start with action verb "(This commit will...)" -> "(This commit will) fix bug in serializer"
+git commit              opens vim, where you can write your commit message. [shift]zz to get out of vim
+
+sequence
+git status
+git add -A
+git status
+git commit -m "Fix bug in serializer"
+git push
