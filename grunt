@@ -1,0 +1,4 @@
+Everything from the source (src/) file will be compiled into the distribution (dist/) file
+If you go to http://localhost:9000/playground/, the browser will look for the folder 'playground' in
+http://localhost:9000/ and open the index.html file - default behaviour. If no index.html, it will look for index.php.
+Handlebars (.hbs) in src/ compile into html in dist/
