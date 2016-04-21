@@ -12,3 +12,10 @@ git commit -m "Fix bug in serializer"
 git push
 git reset --hard        undoes all the changed files back to last commit.
 git remote set-url origin [new-url]   rename the URL of your remote origin
+
+  To only commit files in certain folders:
+git commit -m “Commit notes" sites/all/themes/porsche/css/*
+and:
+/sites/all/modules/contrib/responsive_menus/styles/responsive_menus_simple/css
+or:
+git commit -m “Commit notes” sites/all/*

@@ -1,0 +1,74 @@
+Zac's CSS snippets
+
+/*Line 2487 of pages.css to put the track images behind the blue box for track name and date*/
+.result-header-wrapper.open {
+    background: #47a7ea;
+    position: relative;
+    z-index: inherit;
+}
+
+/*pages.css line 2489 add position and z-index to help put the images behind the blue box for track name and date */
+.result-header-wrapper.open {
+    background: #47a7ea;
+    position: relative;
+}
+
+/*To move the hamburger and resize it: FROM:*/
+/*background: url("../images/mobile-menu.png") no-repeat center center transparent;
+width: 32px;
+height: 32px;
+background-size: contain;
+box-shadow: none;
+position: absolute;
+
+top: 5px;
+right: 19px;
+
+font-size: 2em;
+z-index: 9999;*/
+
+TO:
+.responsive-menus.responsified span.toggler {
+    background: url("../images/mobile-menu.png") no-repeat center center transparent;
+    width: 32px;
+    height: 32px;
+    background-size: 69%;
+    box-shadow: none;
+    position: absolute;
+    top: -236px;
+    right: 11px;
+    font-size: 7px;
+    z-index: 9999;
+
+
+
+
+.cls
+
+/*Fix the triangle by chaning position from relative to absolute, right to -51px, top to zero.*/
+@media screen and (max-device-width: 1000px){
+.standings-season-heading h2::after {
+    border-right: 51px solid transparent;
+    border-top: 51px solid #28206d;
+    content: "";
+    height: 0;
+    position: absolute;
+    right: -51px;
+    top: 0;
+    width: 0;
+  }
+}
+Use line-height 51px
+
+font-family: "FranklinGothicSB-Regular", Verdana, Arial, Helvetica, sans-serif;
+
+
+@media screen and (max-width: 768px) {
+
+  }
+}
+
+2728     padding-left: 100px;
+    font-size: 12px;
+
+    2505 result header wrapper 
