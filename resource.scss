@@ -1,17 +1,74 @@
 /* Below are SASS CSS methods for achieving things */
-
 /* Always make images `display: block` to avoid white space below and inline flow.
 Setting `height: auto` on an `<img>` it will respect the ratio of the image
 If you set a fixed height and fixed width you might end up with distorted image.
 Example below with @media: */
-
 img {
-   height: auto;
-   width: 500px;
-   display: block;
+    height: auto;
+    width: 500px;
+    display: block;
 }
 @media (max-width: 540px) {
-   img {
-      width: 300px;
-   }
+    img {
+        width: 300px;
+    }
+}
+/* Jan on CSS position:
+position fixed - stays in one spot relative to the viewport - ideal for lightbox
+position absolute - will look for the first parent that has either fixed or relative position.
+position relative - has one function - to stop an absolute. define the x-y zero/zero point.
+Also check this out: https://www.w3.org/Style/Examples/007/center.en.html
+and
+http://www.w3schools.com/css/css_positioning.asp */
+img {
+    width: 100%;
+    height: auto;
+    opacity: 0.3;
+}
+/* max-width is better than width for responsive - for mobile.
+  max-width: 1080px - widest a website should ever be except for a dashboard
+  min-width: 320px - smallest you’ll need - iPhone4 and 5 */
+/* Jan - suggestion for most sites: */
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 150%;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #333;
+}
+footer > div,
+header > div,
+section > div {
+    min-width: 320px;
+    max-width: 1080px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+img {
+    display: block;
+}
+/* flexbox */
+.box {
+    box-sizing: border box;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    box-sizing: border box;
+}
+/* Sam Margalit on how to place an image: */
+.case-studies-case-detail {
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+/*SamMargalit*/
+.case-studies-case-detail:after {
+    content: "";
+    display: block;
+    padding-top: 62.75%;
 }
