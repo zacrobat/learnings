@@ -1,0 +1,17 @@
+/* Below are SASS CSS methods for achieving things */
+
+/* Always make images `display: block` to avoid white space below and inline flow.
+Setting `height: auto` on an `<img>` it will respect the ratio of the image
+If you set a fixed height and fixed width you might end up with distorted image.
+Example below with @media: */
+
+img {
+   height: auto;
+   width: 500px;
+   display: block;
+}
+@media (max-width: 540px) {
+   img {
+      width: 300px;
+   }
+}
