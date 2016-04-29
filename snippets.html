@@ -1,0 +1,27 @@
+useful snippets of
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+
+    <!-- to use png as backup for svg -->
+    <img src="/assets/img/hotdoc.svg" alt="HotDoc logo" width="148" height="40" onerror="this.onerror=null; this.src='/assets/img/hotdoc.png'">
+
+    <!-- and in CSS, if you use Modernizr (https://modernizr.com/): -->
+    <style>
+        .icon-of-cake {
+            background-image: cake.svg;
+        }
+        .no-svg .icon-of-cake {
+            background-image: cake.png;
+        }
+    </style>
+
+</body>
+
+</html>
