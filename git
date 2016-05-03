@@ -23,4 +23,5 @@ git commit -m “Commit notes” sites/all/*
   git fetch vs git pull
 git pull does a git fetch followed by a git merge. You can do a git fetch at any time to update your remote-tracking
  branches under refs/remotes/<remote>/. This operation never changes any of your own local branches under refs/heads,
- and is safe to do without changing your working copy.  
+ and is safe to do without changing your working copy.
+git revert [paste commit from git log here w/o brackets] to 'undo' the commit - to apply the reverse.
