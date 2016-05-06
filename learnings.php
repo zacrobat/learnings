@@ -7,3 +7,8 @@ if( $valid ) {
 }
 // becomes
 $x = $valid ? 'yes' : 'no'; //If x is valid set it to yes; otherwise set it to no.
+
+/* Run php in iTerm with interactive shell:
+docker run -it php:alpine php -a
+ctr-d to escape back to zsh */
+//Next: download php locally and run in Atom.
