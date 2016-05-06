@@ -10,5 +10,6 @@ $x = $valid ? 'yes' : 'no'; //If x is valid set it to yes; otherwise set it to n
 
 /* Run php in iTerm with interactive shell:
 docker run -it php:alpine php -a
-ctr-d to escape back to zsh */
-//Next: download php locally and run in Atom.
+ctr-d to escape back to zsh
+https://hub.docker.com/_/php/
+Next: download php locally and run in Atom. http://php.net/manual/en/install.macosx.php */
