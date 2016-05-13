@@ -1,0 +1,54 @@
+/*CTA - Bottom of home page*/
+krown-button.large {
+    font-size: 18px !important;
+    line-height: 18px !important;
+    padding: 25px 50px !important;
+    height: 66px !important;
+  }
+.krown-button {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    background-color: #1b1b1b !important;
+    border-radius: 5px !important;
+    display: inline-block !important;
+    text-align: center !important;
+    -webkit-transition: all 100ms linear !important;
+    transition: all 100ms linear !important;
+  }
+
+  
+/*After adding CSS changes:*/
+  .rev-btn, .rev-btn:visited {
+      outline: none !important;
+      box-shadow: none !important;
+      text-decoration: none !important;
+      line-height: 44px;
+      font-size: 17px;
+      font-weight: 500;
+      padding: 12px 35px;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+      cursor: pointer;
+      color: #ffffff !important;
+      font-weight: 700;
+      background-color: #1b1b1b;
+      border-radius: 5px;
+      display: inline-block;
+      text-align: center;
+      -webkit-transition: all 100ms linear !important;
+      transition: all 100ms linear !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      background-color: #287aa9 !important;
+      border-radius: 5px !important;
+      display: inline-block !important;
+      text-align: center !important;
+      -webkit-transition: all 100ms linear !important;
+      transition: all 100ms linear !important;
+      font-size: 18px !important;
+      line-height: 18px !important;
+      padding: 25px 50px !important;
+      height: 66px !important;
+  }
