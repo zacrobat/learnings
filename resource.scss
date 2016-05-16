@@ -83,3 +83,7 @@ body {
 #page-title {
     display: none;
 }
+// make headshot images - or any images in a circle instead of square:
+.class img {
+    border-radius: 50%;
+}
