@@ -47,3 +47,9 @@ function adv_krown_team_function( $atts, $content ) {
    return $html;
 
 }
+
+// find out if a function exits:
+// http://php.net/manual/en/function.function-exists.php
+function_exists
+// (PHP 4, PHP 5, PHP 7)
+// function_exists — Return TRUE if the given function has been defined
