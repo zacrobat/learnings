@@ -91,3 +91,47 @@ body {
 ul {
     list-style: none;
 }
+// :before and pseudo classes inherit style
+// code below will style buttons with fontawesome pdf inside including hover state
+.adv-pdf:before
+{
+    font-family: FontAwesome;
+    font-size: xx-large;
+    font-weight: normal;
+    font-style: normal;
+
+    position: relative;
+    top: .1em;
+
+    display: inline-block;
+
+    margin-right: 12px;
+
+    content: '\f1c1';
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+a.adv-pdf
+{
+    font-size: 18px;
+    line-height: 62px;
+
+    display: inline-block;
+
+    height: 66px;
+    padding: 0 30px 0 30px;
+
+    -webkit-transition: all 100ms linear !important;
+            transition: all 100ms linear !important;
+    text-align: center;
+
+    color: #fff !important;
+    border-radius: 5px;
+    /* font-weight: 700; */
+    background-color: #287aa9 !important;
+}
+a.adv-pdf:hover
+{
+    background-color: #143d55 !important;
+}
