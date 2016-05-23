@@ -92,7 +92,7 @@ ul {
     list-style: none;
 }
 // :before and pseudo classes inherit style
-// code below will style buttons with fontawesome pdf inside including hover state
+// code below will style buttons with fontawesome pdf inside including hover state and word-wrap:break-word;
 .adv-pdf:before
 {
     font-family: FontAwesome;
@@ -134,4 +134,16 @@ a.adv-pdf
 a.adv-pdf:hover
 {
     background-color: #143d55 !important;
+}
+@media (max-width: 419px)
+{
+    a.adv-pdf
+    {
+        line-height: 30px;
+
+        height: auto;
+        padding: 6px 30px 6px 30px;
+
+        word-wrap: break-word;
+    }
 }
