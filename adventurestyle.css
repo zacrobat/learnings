@@ -1,0 +1,438 @@
+/*
+Theme Name:     Backer Child
+Theme URI:      http://demo.krownthemes.com/backer/
+Description:    A basic child theme for the Backer theme - updated by Portable
+Author:         KrownThemes
+Author URI:     http://krownthemes.com
+Template:       backer
+Version:        1.0.0
+*/
+/*@import url("../backer/style.css"); commented out (the old way of importing css into a child theme)*/
+/* Here is the new way to import a stylesheet into a child theme:*/
+/* add this to functions.php:
+<?php
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+function theme_enqueue_styles() {
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+
+}
+?>*/
+/* --------------------------------------
+-----   Theme customization starts here   -----
+------------------------------------------*/
+/*to call Aileron-Thin font:*/
+@font-face
+{
+    font-family: 'Aileron';
+
+    src: url('http://addventure.ptest.tv/wp-content/themes/font/Aileron-Thin.otf');
+}
+
+h2
+{
+    color: #287aa9 !important;
+}
+
+input,
+textarea,
+select,
+.memberdeck form .form-row input,
+.memberdeck form .form-row textarea,
+.memberdeck form .form-row select,
+.ignitiondeck form .form-row input,
+.ignitiondeck form .form-row textarea,
+.ignitiondeck form .form-row select,
+.wp-editor-container,
+.md-requiredlogin form .input
+{
+    width: 255px;
+}
+
+@media (max-width: 600px)
+{
+    input,
+    textarea,
+    select,
+    .memberdeck form .form-row input,
+    .memberdeck form .form-row textarea,
+    .memberdeck form .form-row select,
+    .ignitiondeck form .form-row input,
+    .ignitiondeck form .form-row textarea,
+    .ignitiondeck form .form-row select,
+    .wp-editor-container,
+    .md-requiredlogin form .input
+    {
+        width: 100%;
+    }
+}
+
+.rev-btn,
+.rev-btn:visited
+{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    line-height: 18px !important;
+
+    top: -23px !important;
+
+    display: inline-block !important;
+
+    height: 66px !important;
+    padding: 25px 50px !important;
+
+    -webkit-transition: all 100ms linear !important;
+            transition: all 100ms linear !important;
+    text-align: center !important;
+
+    color: #fff !important;
+    border-radius: 5px !important;
+    background-color: #287aa9 !important;
+}
+
+/*document upload:*/
+input[type='submit']
+{
+    background-color: #287aa9 !important;
+}
+
+.inputfile
+{
+    position: absolute;
+    z-index: -1;
+
+    overflow: hidden;
+
+    width: .1px;
+    height: .1px;
+
+    opacity: 0;
+}
+
+.inputfile,
+label
+{
+    font-size: 1.25em;
+    font-weight: 700;
+
+    display: inline-block;
+
+    width: 300px;
+    height: 66px !important;
+    padding: 25px 50px !important;
+
+    text-align: center;
+
+    color: #fff !important;
+    border-radius: 5px;
+    background-color: #287aa9;
+}
+
+.inputfile:focus,
+label:focus,
+.inputfile:hover,
+label:hover
+{
+    cursor: pointer;
+
+    background-color: #143d55;
+}
+/*consistent button styling:*/
+#slide-32-layer-6:hover,
+.krown-button.color:hover
+{
+    background-color: #143d55 !important;
+}
+
+input.wpcf7-form-control.wpcf7-submit:hover
+{
+    background-color: #143d55 !important;
+}
+
+.krown-team.clearfix img
+{
+    border-radius: 50%;
+}
+
+.krown-team
+{
+    font-size: 14px;
+
+    padding-bottom: 16px;
+
+    color: #1b1b1b;
+}
+/*progress chevrons:*/
+#crumbs ul
+{
+    list-style: none;
+}
+
+#crumbs ul li
+{
+    font-size: 20px;
+    line-height: 52px;
+
+    position: relative;
+
+    display: block;
+    float: left;
+
+    box-sizing: border-box;
+    height: 52px;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: #fff;
+    background: #287aa9;
+}
+
+#crumbs ul li.regfocus
+{
+    background-color: #143d55;
+}
+
+#crumbs ul li.regfocus:after
+{
+    border-left-color: #143d55;
+}
+
+#crumbs ul li.regfocus:before
+{
+    border-top-color: #143d55;
+    border-bottom-color: #143d55;
+}
+
+#crumbs ul li:first-child
+{
+    border-top-left-radius: 10px; border-bottom-left-radius: 10px;
+}
+#crumbs ul li:first-child:before
+{
+    display: none;
+}
+
+#crumbs ul li:last-child
+{
+    /*padding-right: 80px;*/
+    border-top-right-radius: 10px; border-bottom-right-radius: 10px;
+}
+#crumbs ul li:last-child:after
+{
+    display: none;
+}
+
+@media screen and (min-width: 768px)
+{
+    #crumbs ul li
+    {
+        font-size: 14px;
+
+        width: 25%;
+        height: 52px;
+        margin-left: 5%;
+    }
+
+    #crumbs ul li:after
+    {
+        position: absolute;
+        top: 0;
+        right: -20px;
+
+        content: '';
+
+        border-top: 26px solid transparent;
+        border-bottom: 26px solid transparent;
+        border-left: 20px solid #287aa9;
+    }
+
+    #crumbs ul li:before
+    {
+        position: absolute;
+        top: 0;
+        left: -20px;
+
+        content: '';
+
+        border-top: 26px solid #287aa9;
+        border-bottom: 26px solid #287aa9;
+        border-left: 20px solid transparent;
+    }
+}
+
+@media screen and (min-width: 979px)
+{
+    #crumbs ul li
+    {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 767px)
+{
+    #crumbs ul li
+    {
+        width: 100%;
+        margin-bottom: 6px;
+
+        border-radius: 10px;
+    }
+}
+
+
+
+ul.non-register-user
+{
+    position: relative;
+}
+@media screen and (min-width: 1180px)
+{
+    ul.non-register-user span
+    {
+        position: absolute;
+        top: 26px;
+        left: -55px;
+    }
+}
+@media screen and (max-width: 1179px)
+{
+    ul.non-register-user span
+    {
+        position: absolute;
+        top: -12px;
+    }
+}
+/*pdf upload button:*/
+.adv-pdf:before
+{
+    font-family: FontAwesome;
+    font-size: xx-large;
+    font-weight: normal;
+    font-style: normal;
+
+    position: relative;
+    top: .1em;
+
+    display: inline-block;
+
+    margin-right: 12px;
+
+    content: '\f1c1';
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+a.adv-pdf
+{
+    font-size: 18px;
+    line-height: 62px;
+
+    display: inline-block;
+
+    height: 66px;
+    padding: 0 30px 0 30px;
+    width: 329px;
+
+    -webkit-transition: all 100ms linear !important;
+            transition: all 100ms linear !important;
+    text-align: center;
+
+    color: #fff !important;
+    border-radius: 5px;
+    /* font-weight: 700; */
+    background-color: #287aa9 !important;
+}
+a.adv-pdf:hover
+{
+    background-color: #143d55 !important;
+}
+@media (max-width: 419px)
+{
+    a.adv-pdf
+    {
+        line-height: 30px;
+
+        height: auto;
+        padding: 6px 30px 6px 30px;
+        max-width: 238px;
+
+        word-wrap: break-word;
+    }
+}
+/*carousel buttons for navigation responsive mobile - from krown-backer:*/
+@media (max-width: 419px)
+{
+    .carousel .btn-next
+    {
+        right: -25px !important;
+    }
+    .carousel .btn-prev
+    {
+        left: -25px !important;
+    }
+}
+@media (max-width: 339px)
+{
+    .posts-grid .item,
+    .krown-id-item
+    {
+        width: 135px !important;
+        margin-right: 5px !important;
+        margin-left: 12px !important;
+    }
+    .carousel .btn-next
+    {
+        right: -12px !important;
+    }
+    .carousel .btn-prev
+    {
+        left: -12px !important;
+    }
+}
+
+.alert.alert-warning
+{
+    width: 512px;
+    margin-bottom: 15px;
+    padding: 20px;
+
+    color: #1b1b1b;
+    background-color: #ffa92c;
+}
+@media (max-width: 600px)
+{
+    .alert.alert-warning
+    {
+        width: 100%;
+    }
+}
+
+.deal-closed
+{
+    position: relative;
+
+    overflow: hidden;
+}
+.deal-closed:before
+{
+    line-height: 50px;
+
+    position: absolute;
+    z-index: 999;
+    top: 25px;
+    right: -50px;
+    left: auto;
+
+    width: 200px;
+
+    content: 'Closed';
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    text-align: center;
+    letter-spacing: 1px;
+
+    color: #f0f0f0;
+    background: #287aa9;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+}
