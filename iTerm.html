@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align:center;">iTerm commands for git, docker, gantry, grunt, etc.</h1>
+    <h2 style="text-align:center;">Docker</h2>
+
+    <table style="width:100%">
+        <tr>
+            <th>Command</th>
+            <th>Does</th>
+            <th>Notes</th>
+        </tr>
+        <tr>
+            <td>docker ps</td>
+            <td>list open docker containers</td>
+            <td>too many containers slows your machine down - housekeeping</td>
+        </tr>
+        <tr>
+            <td>docker stop [CONTAINER NAME]</td>
+            <td>Stop a container by sending SIGTERM and then SIGKILL after a grace period</td>
+            <td>https://docs.docker.com/engine/reference/commandline/stop/</td>
+        </tr>
+        <tr>
+            <td>docker-machine start</td>
+            <td>starts docker</td>
+            <td>Started machines may have new IP addresses. You may need to re-run the `docker-machine env` command.</td>
+        </tr>
+        <tr>
+            <td>docker-machine env</td>
+            <td>tell Docker to talk to the new machine</td>
+            <td>https://docs.docker.com/machine/get-started/</td>
+        </tr>
+        <tr>
+            <td>eval $(docker-machine env)</td>
+            <td>configure your shell</td>
+            <td>https://docs.docker.com/machine/get-started/</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
