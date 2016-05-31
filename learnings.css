@@ -1,0 +1,45 @@
+/*css display
+http://learnlayout.com/display.html
+http://www.w3schools.com/html/html_blocks.asp */
+
+div {
+    display: block;
+}
+div {
+    display: inline;
+}
+div {
+    display: inline-block;
+}
+div {
+    display: none;
+    /* is different from visibility. Setting display to none
+  will render the page as though the element does not exist. visibility: hidden;
+   will hide the element, but the element will still take up the space it would
+   if it was fully visible. */
+}
+
+/*https://css-tricks.com/almanac/properties/d/display/*/
+
+div {
+    display: inline;
+    /* Default of all elements, unless UA stylesheet overrides */
+    display: inline-block;
+    /* Characteristics of block, but sits on a line */
+    display: block;
+    /* UA stylesheet makes things like <div> and <section> block */
+    display: run-in;
+    /* Not particularly well supported or common */
+    display: none;
+    /* Hide */
+}
+
+/*Navbar on the right side with <li> elements in the correct order:*/
+
+ul {
+    float: right;
+    li {
+        display: inline;
+        float: left;
+    }
+}
