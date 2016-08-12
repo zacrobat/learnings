@@ -1,0 +1,59 @@
+#tabs-page {
+  header nav ul a.tabs-page {
+    color: #fff;
+    background-color: #000;
+  }
+  /* Style the list */
+  ul.tabs {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: #fff;
+    // border-left: 1px solid #000;
+    border-bottom: none;
+    background-color: #000;
+  }
+  /* Float the list items side by side */
+  ul.tabs li {
+    float: left;
+  }
+  /* Style the links inside the list items */
+  ul.tabs li a {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-left: 1px solid #000;
+  }
+  ul.tabs li a.active-tab {
+    color: #000;
+    background-color: #fff;
+  }
+  ul.tabs li a.inactive-tab {
+    color: #fff;
+    background-color: #000;
+  }
+  /* Change background color of links on hover */
+  ul.tabs li a:hover {
+    color: #000;
+    background-color: #fff;
+  }
+  /* Create an active/current tablink class */
+  .active,
+  ul.tabs li a:focus {
+    color: #000;
+    background-color: #fff;
+  }
+  /* Style the tab content */
+  .tabcontent div {
+    box-sizing: border-box;
+    // display: none;
+    padding: 16px 26px;
+    border-left: 1px solid #000;
+    border-top: none;
+    height: 130px;
+  }
+}

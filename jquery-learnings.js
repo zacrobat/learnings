@@ -1,5 +1,18 @@
 $(document).ready(function() {
-  //getting dry
+  //Most DRY
+  $('#tab-section div:first-child').siblings().hide();
+  $('.tabs a').on('click', function() {
+    $('ul.tabs li a').removeClass('active-tab');
+    var completeName = '[name="' + $(this).attr('for') + '"]';
+    $(completeName).show().siblings().hide();
+  });
+  //more DRY
+  $('.tabs a').on('click', function() {
+    $('ul.tabs li a').removeClass('active-tab');
+    var completeName = '[name="' + $(this).attr('for') + '"]';
+    $(completeName).removeClass('invisible').addClass('visible').siblings().removeClass('visible').addClass('invisible');
+  });
+  //getting DRY
   $('.tabs a').on('click', function() {
     $('ul.tabs li a').removeClass('active-tab');
     var name = $(this).attr('for');
