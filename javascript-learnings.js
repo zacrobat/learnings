@@ -81,3 +81,6 @@ userIsYoungerThan4 ? serveMilk() : userIsYoungerThan21 ? serveGrapeJuice() : ser
 
 // Be careful, though, or you will end up with convoluted code like this:
 var k = a ? (b ? (c ? d : e) : (d ? e : f)) : f ? (g ? h : i) : j;
+
+//Return a random number between 1 and 10:
+Math.floor((Math.random() * 10) + 1);
