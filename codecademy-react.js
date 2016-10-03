@@ -4,15 +4,14 @@ React JS - notes from codecademy:
 - A JSX expression must have exactly one outermost element - the first opening tag and the final closing tag of a JSX expression must belong to the same JSX element.
 */
 
-<
-script src = "https://s3.amazonaws.com/codecademy-content/courses/React/react-course-bundle.min.js" > < /script> <
+<script src = "https://s3.amazonaws.com/codecademy-content/courses/React/react-course-bundle.min.js" > < /script> <
 script src = "/app.compiled.js" > < /script>
 
 var React = require('react');
 var ReactDOM = require('react-dom');
 
 // Write code here:
-ReactDOM.render( < h1 > Render me! < /h1>, document.getElementById('app'));
+ReactDOM.render( <h1> Render me! </h1>, document.getElementById('app'));
 
 var React = require('react');
 var ReactDOM = require('react-dom');
@@ -31,7 +30,7 @@ ReactDOM.render(
   document.getElementById('app')
 );
 /*
-One special thing about ReactDOM.render is that it only updates DOM elements that have changed. That means thaif you render the exact same thing twice in a row, the second render will do nothing:
+One special thing about ReactDOM.render is that it only updates DOM elements that have changed. That means that if you render the exact same thing twice in a row, the second render will do nothing:
 */
 var hello = < h1 > Hello world < /h1>;
   // This will add "Hello world" to the screen:
@@ -749,6 +748,170 @@ render: function () {
 // If you want to pass information that isn't a string, then wrap that information in curly braces. Here's how you would pass an array:
 
 <Greeting myInfo={["top", "secret", "lol"]} />
-// In this next example, we pass several pieces of information to <Greeting />. The values that aren't strings are wrapped in curly braces:
+// In this next example, we pass several pieces of information to <Greeting />.
+
+The values that aren't strings are wrapped in curly braces:
 
 <Greeting name="Frarthur" town="Flundon" age={2} haunted={false} />
+
+ReactDOM.render(<PropsDisplayer myProp="Hello" />, document.getElementById('app'));
+// myProp="Hello" above is how you pass information to a component's props object.
+
+// You will often want a component to display the information that you pass.
+
+// Here's how to make a component display passed-in information:
+// 1 - Find the component class that is going to receive that information.
+// 2 - Include this.props.name-of-information in that component class's render function's return statement.
+//example:
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var Greeting = React.createClass({
+  render: function () {
+    return <h1>Hi there, {this.props.firstName}!</h1>;
+  }
+});
+
+ReactDOM.render(
+  <Greeting firstName='Grover' />,
+  document.getElementById('app')
+);
+// 'app': Hi there, Grover!
+
+// The most common use of props is to pass information to a component, from a different component.
+
+//A curmudgeonly clarification about grammar: You may have noticed some loose usage of the words prop and props. Unfortunately this is pretty inevitable. props is the name of the object that stores passed-in information. this.props refers to that storage object. At the same time, each piece of passed-in information is also called a prop. props could refer to two pieces of passed-in information, or it could refer to the object that stores those pieces of information. :(
+
+// To pass a prop to a <Greeting /> component instance, from an <App /> component instance: If <App /> is going to pass a prop to <Greeting />, then it follows that <App /> is going to render <Greeting />:
+// Greeting.js:
+
+var React = require('react');
+
+var Greeting = React.createClass({
+  render: function () {
+    return <h1>Hi there, {this.props.name}!</h1>;
+  }
+});
+
+// OR:
+
+var Greeting = React.createClass({
+  render: function () {
+  	if (this.props.signedIn == false) {
+  	  return <h1>GO AWAY</h1>;
+  	} else {
+  	  return <h1>Hi there, {this.props.name}!</h1>;
+  	}
+  }
+});
+
+module.exports = Greeting;
+
+// App.js:
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+var Greeting = require('./Greeting')
+
+var App = React.createClass({
+  render: function () {
+    return (
+      <div>
+        <h1>
+          Hullo and, "Welcome to The Newzz," "On Line!"
+        </h1>
+        <Greeting name="Sally" />
+        <article>
+          Latest newzz:  where is my phone?
+        </article>
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+);
+
+// Receive an event handler as a prop:
+// Button.js:
+var React = require('react');
+
+var Button = React.createClass({
+  render: function () {
+    return (
+      <button onClick={this.props.talk}> // attach talk to the <button></button> as an event handler
+        Click me!
+      </button>
+    );
+  }
+});
+
+module.exports = Button;
+
+// Talker.js:
+var React = require('react');
+var ReactDOM = require('react-dom');
+var Button = require('./Button');
+
+var Talker = React.createClass({
+  talk: function () {
+    for (var speech = '', i = 0; i < 10000; i++) {
+      speech += 'blah ';
+    }
+    alert(speech);
+  },
+
+  render: function () {
+    return <Button talk={this.talk} />;
+  }
+});
+
+ReactDOM.render(
+  <Talker />,
+  document.getElementById('app')
+);
+
+/*
+Let's talk about naming things.
+
+When you pass an event handler as a prop, as you just did, there are two names that you have to choose.
+
+Both naming choices occur in the parent component class - that is, in the component class that defines the event handler and passes it.
+
+The first name that you have to choose is the name of the event handler itself.
+
+Look at Talker.js, lines 6 through 11. This is our event handler. We chose to name it talk.
+
+The second name that you have to choose is the name of the prop that you will use to pass the event handler. This is the same thing as your attribute name.
+
+For our prop name, we also chose talk, as shown on line 14:*/
+
+return <Button talk={this.talk} />;
+
+/*These two names can be whatever you want. However, there is a naming convention that they often follow. You don't have to follow this convention but you should understand it when you see it.
+
+Here's how the naming convention works: first, think about what type of event you are listening for. In our example, the event type was "click."
+
+If you are listening for a "click" event, then you name your event handler handleClick. If you are listening for a "keyPress" event, then you name your event handler handleKeyPress:*/
+
+React.createClass({
+  handleHover: function () {
+    alert('I am an event handler.');
+    alert('I will be called in response to "hover" events.');
+  }
+});
+
+/*Your prop name should be the word on, plus your event type. If you are listening for a "click" event, then you name your prop onClick. If you are listening for a "keyPress" event, then you name your prop onKeyPress:*/
+
+React.createClass({
+  handleHover: function () {
+    alert('I am an event handler.');
+    alert('I will listen for a "hover" event.');
+  },
+
+  render: function () {
+    return <Child onHover={this.handleHover} />;
+  }
+});
