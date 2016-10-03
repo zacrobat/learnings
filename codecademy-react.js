@@ -915,3 +915,176 @@ React.createClass({
     return <Child onHover={this.handleHover} />;
   }
 });
+
+// Button.js:
+var React = require('react');
+
+var Button = React.createClass({
+  render: function () {
+    return (
+      <button onClick={this.props.onClick}>
+        Click me!
+      </button>
+    );
+  }
+});
+
+module.exports = Button;
+
+// Talker.js:
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+var Button = require('./Button');
+
+var Talker = React.createClass({
+  handleClick: function () {
+    for (var speech = '', i = 0; i < 10000; i++) {
+      speech += 'blah ';
+    }
+    alert(speech);
+  },
+
+  render: function () {
+    return <Button onClick={this.handleClick} />;
+  }
+});
+
+ReactDOM.render(
+  <Talker />,
+  document.getElementById('app')
+);
+
+One major source of confusion is that the name onClick has special meaning, but only when it's used on HTML-like elements.
+
+Look at Button.js. When you give a <button></button> an attribute named onClick, then the name onClick has special meaning. As you've learned, this special onClick attribute creates an event listener, listening for clicks on the <button></button>:
+
+// Button.js
+
+// The attribute name onClick
+// creates an event listner:
+<button onClick={this.props.onClick}>
+  Click me!
+</button>
+Now look at Talker.js. Here, when you give <Button /> an attribute named onClick, then the name onClick doesn't do anything special. The name onClick does not create an event listener when used on <Button /> - it's just an arbitrary attribute name:
+
+// Talker.js
+
+// The attribute name onClick
+// is just a normal attribute name:
+<Button onClick={this.handleClick} />
+The reason for this is that in <Button /> is not an HTML-like JSX element; it's a component instance.
+
+Names like onClick only create event listeners if they're used on HTML-like JSX elements. Otherwise, they're just ordinary prop names.
+
+
+
+Every component's props object has a property named children.
+
+this.props.children will return everything in between a component's opening and closing JSX tags.
+
+So far, all of the components that you've seen have been self-closing tags, such as <MyComponentClass />. They don't have to be! You could write <MyComponentClass></MyComponentClass>, and it would still work.
+
+this.props.children would return everything in between <MyComponentClass> and </MyComponentClass>.
+
+Look at BigButton.js (below). In Example 1, <BigButton>'/'s this.props.children would equal the text, "I am a child of BigButton."
+
+In Example 2, <BigButton>'/'s this.props.children would equal a <LilButton /> component.
+
+In Example 3, <BigButton>'/'s this.props.children would equal undefined.
+
+If a component has more than one child between its JSX tags, then this.props.children will return those children in an array. However, if a component has only one child, then this.props.children will return the single child, not wrapped in an array.
+
+var React = require('react');
+var LilButton = require('./LilButton');
+
+var BigButton = React.createClass({
+  render: function () {
+    console.log(this.props.children);
+    return <button>Yo I am big</button>;
+  }
+});
+
+// Example 1
+<BigButton>
+  I am a child of BigButton.
+</BigButton>
+
+// Example 2
+<BigButton>
+  <LilButton />
+</BigButton>
+
+// Example 3
+<BigButton />
+
+  Take a look at the Button component class.
+
+  Notice that on line 8, Button expects to receive a prop named text. The received text will be displayed in a <button></button> element.
+
+  What if nobody passes any text to Button?
+
+  If nobody passes any text to Button, then Button's display will be blank. It would be better if Button could display a default message instead.
+
+  You can make this happen by writing a function named getDefaultProps:
+
+  var Example = React.createClass({
+
+    getDefaultProps: function () {},
+
+    render: function () {
+      return <h1>{this.props.text}</h1>;
+    }
+  });
+  The getDefaultProps function should return an object:
+
+  var Example = React.createClass({
+
+    getDefaultProps: function () {
+      // Return an object:
+      return {};
+    },
+
+    render: function () {
+      return <h1>{this.props.text}</h1>;
+    }
+  });
+  Inside of this returned object, write properties for any default props that you'd like to set:
+
+  var Example = React.createClass({
+    getDefaultProps: function () {
+      return { text: 'yo' };
+    },
+
+    render: function () {
+      return <h1>{this.props.text}</h1>;
+    }
+  });
+  If an <Example /> doesn't get passed any text, then it will display "yo."
+
+  If an <Example /> does get passed some text, then it will display that passed-in text.
+
+props is quite possibly the longest and most difficult lesson in all of our React courses. Congratulations on getting this far!
+
+  Here are some of the skills that you have learned:
+
+  Passing a prop by giving an attribute to a component instance
+  Accessing a passed-in prop via this.props.prop-name
+  Displaying a prop
+  Using a prop to make decisions about what to display
+  Defining an event handler in a component class
+  Passing an event handler as a prop
+  Receiving a prop event handler and attaching it to an event listener
+  Naming event handlers and event handler attributes according to convention
+  this.props.children
+  getDefaultProps
+
+New Chapter, State:
+
+Dynamic information is information that can change.
+
+React components will often need dynamic information in order to render. For example, a component displaying a game's score will need to check the score before it can display it.
+
+There are two ways for a component to get dynamic information: props and state. Besides props and state, everything in a component should always stay exactly the same.
+
+You just spent a long lesson learning about props. Now it's time to learn about state. props and state are all that you need to set up an ecosystem of interacting React components.
