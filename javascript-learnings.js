@@ -84,3 +84,15 @@ var k = a ? (b ? (c ? d : e) : (d ? e : f)) : f ? (g ? h : i) : j;
 
 //Return a random number between 1 and 10:
 Math.floor((Math.random() * 10) + 1);
+
+console.log('hello replace using regexp');
+// regex example - remove the 's' from thend of a string.
+// http://www.w3schools.com/jsref/jsref_replace.asp
+// http://www.w3schools.com/jsref/jsref_obj_regexp.asp
+var string = "boomdrums";
+console.log(string);
+var removeS = function(input) {
+  var changeIt = input.replace(/s$/,""); // remove the s
+  return changeIt;
+};
+console.log(removeS(string));

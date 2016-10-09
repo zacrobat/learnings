@@ -1273,3 +1273,18 @@ That is why you can't call this.setState from inside of the render function! thi
 
 
 REACT.JS PART II - codecademy:
+Welcome to Introduction to React.js: Part II!
+
+During this course, you will learn more React.js fundamentals. You will also learn some popular strategies for combining these fundamentals. We call these strategies programming patterns.
+
+If learning fundamental skills is like viewing a React app through a microscope, then learning programming patterns is like removing the microscope and viewing an app with the naked eye. In the next course, we'll step back even further and view a React app from a distance, to see how it all fits together.
+
+At the end of this course, you will install and configure React.js on your local computer.
+
+Let's learn our first programming pattern!
+
+In this lesson, we'll take a look at a simple version of a programming pattern. The following lessons will expand upon that lesson, and by the end, we'll have a programming pattern in its full complexity.
+
+Our programming pattern uses two React components: a stateful component, and a stateless component. "Stateful" describes any component that has a getInitialState function; "stateless" describes any component that does not.
+
+In our pattern, a stateful component passes its state down to a stateless component.
