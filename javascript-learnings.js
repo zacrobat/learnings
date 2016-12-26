@@ -96,3 +96,27 @@ var removeS = function(input) {
   return changeIt;
 };
 console.log(removeS(string));
+
+// Syllable Counter (words only, no numbers):
+function newCount(word) {
+  word = word.toLowerCase();                                     //word.downcase!
+  if(word.length <= 3) { return 1; }                             //return 1 if word.length <= 3
+    word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');   //word.sub!(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '')
+    word = word.replace(/^y/, '');                                 //word.sub!(/^y/, '')
+    return word.match(/[aeiouy]{1,2}/g).length;                    //word.scan(/[aeiouy]{1,2}/).size
+}
+console.log(newCount('Syllables'));
+
+// Javascript that executes after page load
+// http://stackoverflow.com/questions/807878/javascript-that-executes-after-page-load
+/*These solutions will work:
+
+<body onload="script();">
+or
+
+document.onload = function ...
+or even
+
+window.onload = function ...
+
+Note that the last option is a better way to go since it is unobstrusive and is considered more standard.*/
