@@ -14,4 +14,10 @@ poem.lines.to_a.reverse #chain some methods - turn the poem into a list (array),
 {} # is a 'hash' or a 'dictionary.' Hashes store related information by giving reusable labels to pieces of data.
 # Hashes store key/value pairs
 books.keys # returns the keys
-books.values.each { |rate| ratings[rate] += 1 } # turn all your unique VALUES in books into KEYS within the new ratingshash. 
+books.values.each { |rate| ratings[rate] += 1 } # turn all your unique VALUES in books into KEYS within the new ratingshash.
+puts returns nil
+** is "to the power of" # 3**2 => 9
+Math is a built-in module for mathematics so Math.sqrt(9) => 3
+def hi #starts the definition of a method named 'hi'
+  puts "Hello World"
+end # end of method.
